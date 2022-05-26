@@ -41,11 +41,11 @@ jobs:
 
     # Setup compilation mode and install project dependencies
     - name: Configure xmake and install dependencies
-      run: xmake.exe config --arch=${{ matrix.arch }} --mode=${{ matrix.mode }} --yes --verbose
+      run: xmake.exe config --arch=${{ matrix.arch }} --mode=${{ matrix.mode }} --yes -vD
 
     # Build the game
     - name: Build
-      run: xmake.exe
+      run: xmake.exe -vD
 
     # No tests for TiltedConnect
     # Run tests
